@@ -28,6 +28,10 @@ Descripcion
 
 Precio
 
+Stock Minimo
+
+Stock Maximo
+
 
 Categoría.	Clasificación de los productos (Ej. electrónicos, alimentos).
 
@@ -104,6 +108,13 @@ Numero de Telefono
 
 
 Inventario	Estado actual de existencias por producto.
+
+Product ID
+
+Cantidad Actual
+
+Ubicacion ID
+
 ________________________________________
 3. 📜 Reglas del Almacén
    
