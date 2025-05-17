@@ -18,50 +18,90 @@ ________________________________________
    
 Entidad	Descripción
 
-Producto	Representa los ítems almacenados.
+Producto.	Representa los ítems almacenados.
+
 ID
+
 Nombre
+
 Descripcion
+
 Precio
 
-Categoría	Clasificación de los productos (Ej. electrónicos, alimentos).
+
+Categoría.	Clasificación de los productos (Ej. electrónicos, alimentos).
+
 ID
+
 Nombre
 
-Proveedor	Datos del proveedor del producto.
+
+Proveedor.	Datos del proveedor del producto.
+
+
 ID
+
 Nombre
+
 Contacto
+
 Telefono
+
 Localizacion
 
-Entrada	Registro de ingreso de productos al almacén.
+
+Entrada.	Registro de ingreso de productos al almacén.
+
+
 ID
+
 Producto ID
+
 Ubicacion Temporal
+
 Fecha de Registro
+
 Fecha de Expiracion Producto 
+
 Cantidad
 
-Salida	Registro de salida de productos (ventas, traspasos).
+
+Salida.	Registro de salida de productos (ventas, traspasos).
+
 ID
+
 Producto ID
+
 Tipo de Salida (Ventas,Traspaso)
+
 Ubicacion de Salida
+
 Usuario 
 
-Ubicación	Espacio físico dentro del almacén (estantería, zona, etc.).
+
+Ubicación.	Espacio físico dentro del almacén (estantería, zona, etc.)
+
 ID
+
 Almacen
+
 Localidad
+
 Estanteria
 
-Usuario	Persona que opera el sistema.
+
+Usuario.	Persona que opera el sistema.
+
 ID
+
 Nombre
-Responsabilidad
+
+Responsabilidad/Cargo
+
 Correo Electronico
+
 Numero de Telefono
+
 
 Inventario	Estado actual de existencias por producto.
 ________________________________________
