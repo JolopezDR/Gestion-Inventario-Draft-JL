@@ -155,4 +155,10 @@ ________________________________________
 •	¿Cuál es el historial de movimiento de un producto específico?
 
 •	¿Cuáles son los productos con mayor/menor rotación?
+
+____________________________________________________________________________
+DIAGRAMA ENTIDAD RELACION
   
+[DIAGRAMA ENTIDAD RELACION  SISTEMA INVENTARIO JL.pdf](https://github.com/user-attachments/files/20376029/DIAGRAMA.ENTIDAD.RELACION.SISTEMA.INVENTARIO.JL.pdf)
+
+![image](https://github.com/user-attachments/assets/6201a212-ef40-4bcb-90bc-a994fa86e399)
