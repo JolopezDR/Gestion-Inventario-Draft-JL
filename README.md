@@ -162,3 +162,8 @@ DIAGRAMA ENTIDAD RELACION
 [DIAGRAMA ENTIDAD RELACION  SISTEMA INVENTARIO JL.pdf](https://github.com/user-attachments/files/20376029/DIAGRAMA.ENTIDAD.RELACION.SISTEMA.INVENTARIO.JL.pdf)
 
 ![image](https://github.com/user-attachments/assets/6201a212-ef40-4bcb-90bc-a994fa86e399)
+
+
+MODELO FISICO
+
+![image](https://github.com/user-attachments/assets/bcdd63d9-55f2-43cf-91c4-45612f56bd32)
