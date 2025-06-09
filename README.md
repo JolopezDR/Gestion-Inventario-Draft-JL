@@ -558,6 +558,8 @@ GO
 ALTER DATABASE [Proyecto_Inventario_Jose_Lopez] SET  READ_WRITE 
 GO
 
+MODELO FISICO
+![image](https://github.com/user-attachments/assets/bcdd63d9-55f2-43cf-91c4-45612f56bd32)
 
 Script de la Base de datos con inserción de datos (Mínimo 5 registros por tablas independientes o no transaccionales y mínimo 15 registros por cada tabla transaccional  y para trabajos grupales el doble de registros. )  
 
@@ -949,3 +951,53 @@ USE [master]
 GO
 ALTER DATABASE [Proyecto_Inventario_Jose_Lopez] SET  READ_WRITE 
 GO
+
+ANEXOS.  
+Evidencias de consultas
+--¿Cuáles productos están por debajo del nivel mínimo?
+select * from PRODUCTOS
+WHERE CANTIDAD<Stock_Minimo
+
+--•	Consultar por categoría de productos.
+select A.id,A.Nombre,cantidad,b.nombre AS CATEGORIA from PRODUCTOS A
+INNER JOIN CATEGORIA_INVENTARIO B
+ON A.CategoriaId=B.ID
+
+--•	¿Cuántas entradas/salidas hubo en el último mes?
+--ENTRADAS/DESPACHOS
+DECLARE @DATE1 DATETIME='2025-06-01', @DATE2 DATETIME='2025-06-30'
+SELECT ID, Nombre,
+(SELECT SUM(CANTIDAD) FROM ENTRADAS WHERE PRODUCTOID=A.ID AND FECHA_REGISTRO BETWEEN @DATE1 AND @DATE2) AS ENTRADAS,
+(SELECT SUM(CANTIDAD) FROM DESPACHOS WHERE PRODUCTOID=A.ID AND FECHA_REGISTRO BETWEEN @DATE1 AND @DATE2) AS DESPACHOS
+FROM PRODUCTOS A 
+
+--•	¿Cuál es el historial de movimiento de un producto específico?
+
+DECLARE @PRODUCTOID INT =4 --PARA SELECCIONAR EL PRODUCTO
+SELECT A.ID,NOMBRE,B.FECHA_REGISTRO,'ENTRADA' AS TIPO,B.CANTIDAD,B.USUARIOID 
+INTO #TEMPO1
+FROM PRODUCTOS A
+INNER JOIN ENTRADAS B
+ON A.ID=B.PRODUCTOID 
+WHERE A.ID=@PRODUCTOID
+
+UNION ALL 
+SELECT A.ID,NOMBRE,B.FECHA_REGISTRO,'DESPACHO' AS TIPO,B.CANTIDAD,B.USUARIOID 
+FROM PRODUCTOS A
+INNER JOIN DESPACHOS B
+ON A.ID=B.PRODUCTOID 
+WHERE A.ID=@PRODUCTOID
+SELECT * FROM #TEMPO1 ORDER BY FECHA_REGISTRO DESC
+DROP TABLE #TEMPO1
+
+--¿Cuáles son los productos con mayor/menor rotación?
+SELECT ID, Nombre,DBO.INV_INICIAL (ID,'2025-06-01','2025-06-30') as INVENTARIO_INICIAL, Cantidad as Inventario_Final, 
+DBO.INV_DESPACHO (ID,'2025-06-01','2025-06-30') AS DESPACHO,
+((DBO.INV_INICIAL (ID,'2025-06-01','2025-06-30')+CANTIDAD)/2) AS PROMEDIO,
+CAST (DBO.INV_DESPACHO (ID,'2025-06-01','2025-06-30') /((DBO.INV_INICIAL (ID,'2025-06-01','2025-06-30')+CANTIDAD)/2) AS float) AS ROTACION
+FROM PRODUCTOS A
+
+
+
+
+
