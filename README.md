@@ -560,8 +560,8 @@ ALTER DATABASE [Proyecto_Inventario_Jose_Lopez] SET  READ_WRITE
 GO
 
 MODELO FISICO
+![image](https://github.com/user-attachments/assets/fa511251-2963-4ddc-af2f-45a956d47c94)
 
-![image](https://github.com/user-attachments/assets/bcdd63d9-55f2-43cf-91c4-45612f56bd32)
 
 Script de la Base de datos con inserción de datos (Mínimo 5 registros por tablas independientes o no transaccionales y mínimo 15 registros por cada tabla transaccional  y para trabajos grupales el doble de registros. )  
 
